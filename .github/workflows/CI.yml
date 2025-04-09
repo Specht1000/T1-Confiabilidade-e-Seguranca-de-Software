@@ -1,0 +1,27 @@
+name: Continous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install_packages
+      run: "sudo apt-get update; sudo apt-get -y install cppcheck-gui cppcheck clang valgrind"
+    - name: cppcheck
+      run: "cd Unity/T1/TrianguloTest; make cppcheck"
+    - name: make
+      run: "cd Unity/T1/TrianguloTest; make"
+    - name: cov
+      run: "cd Unity/T1/TrianguloTest; make cov"
+    - name: valgrind
+      run: "cd Unity/T1/TrianguloTest; make valgrind"
+    - name: sanitizer
+      run: "cd Unity/T1/TrianguloTest; make sanitizer"
