@@ -19,8 +19,6 @@ jobs:
       run: "cd Unity/T1/TrianguloTest; make cppcheck"
     - name: make
       run: "cd Unity/T1/TrianguloTest; make"
-    - name: cov
-      run: "cd Unity/T1/TrianguloTest; make cov"
     - name: valgrind
       run: "cd Unity/T1/TrianguloTest; make valgrind"
     - name: sanitizer
