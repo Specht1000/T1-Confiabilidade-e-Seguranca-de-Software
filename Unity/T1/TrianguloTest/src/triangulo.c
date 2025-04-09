@@ -27,12 +27,12 @@ const char* triangulo(int a, int b, int c)
     }
 }
 
-int main ()
-{
-    int a, b, c;
+// int main ()
+// {
+//     int a, b, c;
 
-    printf("Defina os lados do triangulo: ");
-    scanf("%d %d %d", &a, &b, &c);
+//     printf("Defina os lados do triangulo: ");
+//     scanf("%d %d %d", &a, &b, &c);
 
-    triangulo(a, b, c);
-}
+//     triangulo(a, b, c);
+// }
