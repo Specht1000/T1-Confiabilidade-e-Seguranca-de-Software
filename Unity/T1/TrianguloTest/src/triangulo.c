@@ -1,15 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Comandos:
+
+// cppcheck --enable=all --suppress=missingIncludeSystem src/triangulo.c
+
+// gcc -g -Wall -Wfatal-errors src/triangulo.c -o triangulo
+// valgrind --leak-check=full --show-leak-kinds=all ./triangulo
+
+// gcc -g -Wall -Wfatal-errors -fsanitize=address src/triangulo.c -o triangulo
+// ./triangulo
+
 const char* triangulo(int a, int b, int c)
 {
     // cppcheck
-    // int d;
-    // if (d > 10) printf("Erro cppcheck\n"); // cppcheck acusa "uninitialized variable 'd'"
+    int d;
+    if (d > 10) printf("Erro cppcheck\n"); // cppcheck acusa "uninitialized variable 'd'"
 
-    // if (0) {
-    //     printf("Nunca executa\n"); // cppcheck avisa código inatingível
-    // }
+    if (0) {
+        printf("Nunca executa\n"); // cppcheck avisa código inatingível
+    }
     
     // // valgrind
     // int* vet = malloc(sizeof(int) * 3);
